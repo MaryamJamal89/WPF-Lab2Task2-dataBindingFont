@@ -1,0 +1,72 @@
+﻿<Window x:Class="Lab2_Task2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab2_Task2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="800">
+    <DockPanel>
+        <Border
+            DockPanel.Dock="Top"
+            BorderThickness="2"
+            BorderBrush="DarkOliveGreen"
+            Padding="10"
+            Margin="10">
+            <TextBlock
+                Text="Choose Your Font to Preview"
+                FontSize="20"
+                HorizontalAlignment="Center"
+/>
+        </Border>
+        <Border
+            DockPanel.Dock="Bottom"
+            BorderThickness="2"
+            BorderBrush="DarkOliveGreen"
+            Padding="10"
+            Margin="10">
+            <TextBox 
+                Name="inputTxt"
+                FontSize="18"
+                />
+        </Border>
+        <ListBox
+            Name="listBox"
+            DockPanel.Dock="Left"
+            ItemsSource="{x:Static Fonts.SystemFontFamilies}"
+            FontSize="18"
+            Width="200"
+            Background="AliceBlue"
+            Padding="10, 0, 0, 0"
+            Margin="10">
+        </ListBox>
+        <StackPanel 
+            DockPanel.Dock="Right"
+            Margin="10">
+            <TextBlock
+                FontFamily="{Binding ElementName=listBox, Path=SelectedItem}"
+                Text="{Binding ElementName=inputTxt, Path=Text}"
+                FontSize="10"/>
+            <TextBlock
+                FontFamily="{Binding ElementName=listBox, Path=SelectedItem}"
+                Text="{Binding ElementName=inputTxt, Path=Text}"
+                FontSize="20"/>
+            <TextBlock
+                FontFamily="{Binding ElementName=listBox, Path=SelectedItem}"
+                Text="{Binding ElementName=inputTxt, Path=Text}"
+                FontSize="30"/>
+            <TextBlock
+                FontFamily="{Binding ElementName=listBox, Path=SelectedItem}"
+                Text="{Binding ElementName=inputTxt, Path=Text}"
+                FontSize="40"/>
+            <TextBlock
+                FontFamily="{Binding ElementName=listBox, Path=SelectedItem}"
+                Text="{Binding ElementName=inputTxt, Path=Text}"
+                FontSize="50"/>
+            <TextBlock
+                FontFamily="{Binding ElementName=listBox, Path=SelectedItem}"
+                Text="{Binding ElementName=inputTxt, Path=Text}"
+                FontSize="60"/>
+        </StackPanel>
+    </DockPanel>
+</Window>
